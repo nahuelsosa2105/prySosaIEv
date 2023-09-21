@@ -22,7 +22,7 @@ namespace prySosaIEv
             Application.Exit();
         }
 
-        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             frmMostrarProveedores frmMostrarProveedores = new frmMostrarProveedores();
@@ -38,12 +38,24 @@ namespace prySosaIEv
             frmInicioSesion.Show();
         }
 
-        private void cargarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void cargarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             frmCargarProveedores frmCargarProveedores = new frmCargarProveedores();
             frmCargarProveedores.Show();
             frmCargarProveedores.TopMost = true;
+            
+        }
+
+        private void menuStrip1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void menuStrip1_MouseClick(object sender, MouseEventArgs e)
+        {
+            frmMostrarProveedores frmMostrarProveedores = new frmMostrarProveedores();
+            frmMostrarProveedores.Close();
         }
     }
 }
