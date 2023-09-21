@@ -76,6 +76,7 @@
             this.cargarToolStripMenuItem.Name = "cargarToolStripMenuItem";
             this.cargarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cargarToolStripMenuItem.Text = "Cargar";
+            this.cargarToolStripMenuItem.Click += new System.EventHandler(this.cargarToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 

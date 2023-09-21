@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCargarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargarProveedores.Designer.cs">
+      <DependentUpon>frmCargarProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicioDeSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCargarProveedores.resx">
+      <DependentUpon>frmCargarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicioDeSesion.resx">
       <DependentUpon>frmInicioDeSesion.cs</DependentUpon>
     </EmbeddedResource>

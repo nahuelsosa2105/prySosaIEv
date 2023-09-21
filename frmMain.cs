@@ -37,5 +37,13 @@ namespace prySosaIEv
             frmInicioDeSesion frmInicioSesion = new frmInicioDeSesion();
             frmInicioSesion.Show();
         }
+
+        private void cargarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            frmCargarProveedores frmCargarProveedores = new frmCargarProveedores();
+            frmCargarProveedores.Show();
+            frmCargarProveedores.TopMost = true;
+        }
     }
 }

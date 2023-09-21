@@ -38,12 +38,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.pctMostrarConstraseña = new System.Windows.Forms.PictureBox();
             this.pctOcultar = new System.Windows.Forms.PictureBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.pctMostrarConstraseña = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctMostrarConstraseña)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctMostrarConstraseña)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombreDeUsuario
@@ -144,6 +144,17 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // pctMostrarConstraseña
+            // 
+            this.pctMostrarConstraseña.Image = global::prySosaIEv.Properties.Resources.fotoMostrarConstraseña;
+            this.pctMostrarConstraseña.Location = new System.Drawing.Point(476, 354);
+            this.pctMostrarConstraseña.Name = "pctMostrarConstraseña";
+            this.pctMostrarConstraseña.Size = new System.Drawing.Size(28, 26);
+            this.pctMostrarConstraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctMostrarConstraseña.TabIndex = 16;
+            this.pctMostrarConstraseña.TabStop = false;
+            this.pctMostrarConstraseña.Click += new System.EventHandler(this.pctMostrarConstraseña_Click);
+            // 
             // pctOcultar
             // 
             this.pctOcultar.Image = global::prySosaIEv.Properties.Resources.foto_Ocultar_Contraseña;
@@ -167,22 +178,11 @@
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
             // 
-            // pctMostrarConstraseña
-            // 
-            this.pctMostrarConstraseña.Image = global::prySosaIEv.Properties.Resources.fotoMostrarConstraseña;
-            this.pctMostrarConstraseña.Location = new System.Drawing.Point(476, 354);
-            this.pctMostrarConstraseña.Name = "pctMostrarConstraseña";
-            this.pctMostrarConstraseña.Size = new System.Drawing.Size(28, 26);
-            this.pctMostrarConstraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctMostrarConstraseña.TabIndex = 16;
-            this.pctMostrarConstraseña.TabStop = false;
-            this.pctMostrarConstraseña.Click += new System.EventHandler(this.pctMostrarConstraseña_Click);
-            // 
             // frmInicioDeSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(516, 650);
             this.Controls.Add(this.pctMostrarConstraseña);
             this.Controls.Add(this.pctOcultar);
@@ -202,9 +202,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmInicioDeSesion_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.pctMostrarConstraseña)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctMostrarConstraseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
