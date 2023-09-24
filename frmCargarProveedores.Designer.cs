@@ -213,6 +213,7 @@
             this.btnCargar.TabIndex = 37;
             this.btnCargar.Text = "CARGAR";
             this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // btnLimpiar
             // 

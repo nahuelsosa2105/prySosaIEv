@@ -33,9 +33,10 @@ namespace prySosaIEv
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmInicioDeSesion frmInicioSesion = new frmInicioDeSesion();
-            frmInicioSesion.Show();
+            //this.Hide();
+            //frmInicioDeSesion frmInicioSesion = new frmInicioDeSesion();
+            //frmInicioSesion.Show();
+            Application.Exit();
         }
 
         public void cargarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace prySosaIEv
         {
             frmMostrarProveedores frmMostrarProveedores = new frmMostrarProveedores();
             frmMostrarProveedores.Close();
+
         }
     }
 }

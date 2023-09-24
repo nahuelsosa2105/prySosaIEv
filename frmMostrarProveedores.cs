@@ -31,7 +31,7 @@ namespace prySosaIEv
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo(@"../..");
+            DirectoryInfo info = new DirectoryInfo(@"../../Resources/Carpetas de Proveedores");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
