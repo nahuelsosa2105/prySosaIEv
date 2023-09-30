@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,37 +16,64 @@ namespace prySosaIEv
         public frmMain()
         {
             InitializeComponent();
+            
         }
+
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        frmMostrarProveedores frmMostrarProveedoress = new frmMostrarProveedores();
+        frmCargarProveedores frmCargarProveedoress = new frmCargarProveedores();
+        int contProv = 0;
+        int contCargar = 0;
+        
         public void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            if (contProv == 0)
+            {
+                
+                frmMostrarProveedoress.Show();
+                frmMostrarProveedoress.TopMost = true;
+                contProv = 1;
+                frmCargarProveedoress.Hide();
+            }
+            else
+            {
+                frmMostrarProveedoress.Close();
+                contProv = 0;
+            }
             
-            frmMostrarProveedores frmMostrarProveedores = new frmMostrarProveedores();
-            frmMostrarProveedores.Show();
-            frmMostrarProveedores.TopMost = true;
+            
             
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //frmInicioDeSesion frmInicioSesion = new frmInicioDeSesion();
-            //frmInicioSesion.Show();
             Application.Exit();
         }
 
         public void cargarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            frmCargarProveedores frmCargarProveedores = new frmCargarProveedores();
-            frmCargarProveedores.Show();
-            frmCargarProveedores.TopMost = true;
-            
+            if(contCargar == 0)
+            {
+                frmCargarProveedoress.Show();
+                frmCargarProveedoress.TopMost = true;
+                contCargar = 1;
+                frmMostrarProveedoress.Hide() ;
+                contProv = 0;
+
+            }
+            else
+            {
+
+            }
+
+
+
         }
 
         private void menuStrip1_Click(object sender, EventArgs e)
