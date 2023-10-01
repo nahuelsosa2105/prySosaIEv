@@ -43,10 +43,10 @@
             this.lblEntidad = new System.Windows.Forms.Label();
             this.txtEntidad = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.TxtNumero = new System.Windows.Forms.TextBox();
             this.btnCargar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.pctlogoPeq = new System.Windows.Forms.PictureBox();
+            this.lblNumProveedor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctlogoPeq)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,14 +194,6 @@
             this.lblNumero.TabIndex = 29;
             this.lblNumero.Text = "N°:";
             // 
-            // TxtNumero
-            // 
-            this.TxtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNumero.Location = new System.Drawing.Point(234, 71);
-            this.TxtNumero.Name = "TxtNumero";
-            this.TxtNumero.Size = new System.Drawing.Size(244, 26);
-            this.TxtNumero.TabIndex = 0;
-            // 
             // btnCargar
             // 
             this.btnCargar.BackColor = System.Drawing.Color.White;
@@ -226,6 +218,7 @@
             this.btnLimpiar.TabIndex = 38;
             this.btnLimpiar.Text = "LIMPIAR";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // pctlogoPeq
             // 
@@ -237,12 +230,24 @@
             this.pctlogoPeq.TabIndex = 39;
             this.pctlogoPeq.TabStop = false;
             // 
+            // lblNumProveedor
+            // 
+            this.lblNumProveedor.BackColor = System.Drawing.Color.White;
+            this.lblNumProveedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNumProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumProveedor.Location = new System.Drawing.Point(234, 74);
+            this.lblNumProveedor.Name = "lblNumProveedor";
+            this.lblNumProveedor.Size = new System.Drawing.Size(244, 23);
+            this.lblNumProveedor.TabIndex = 40;
+            this.lblNumProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmCargarProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 516);
+            this.Controls.Add(this.lblNumProveedor);
             this.Controls.Add(this.pctlogoPeq);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCargar);
@@ -261,11 +266,11 @@
             this.Controls.Add(this.lblEntidad);
             this.Controls.Add(this.txtEntidad);
             this.Controls.Add(this.lblNumero);
-            this.Controls.Add(this.TxtNumero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCargarProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCargarProveedores";
+            this.Load += new System.EventHandler(this.frmCargarProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctlogoPeq)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,9 +294,9 @@
         private System.Windows.Forms.Label lblEntidad;
         private System.Windows.Forms.TextBox txtEntidad;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.TextBox TxtNumero;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.PictureBox pctlogoPeq;
+        private System.Windows.Forms.Label lblNumProveedor;
     }
 }

@@ -54,7 +54,9 @@ namespace prySosaIEv
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            frmInicioDeSesion frminiciar = new frmInicioDeSesion();
+            frminiciar.Show();
         }
 
         public void cargarToolStripMenuItem_Click(object sender, EventArgs e)
