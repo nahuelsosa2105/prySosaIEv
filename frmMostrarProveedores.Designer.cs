@@ -32,20 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMostrarProveedores));
             this.scMostrarProveedores = new System.Windows.Forms.SplitContainer();
             this.tvwMostrarProveedores = new System.Windows.Forms.TreeView();
-            this.lvwMostrarProveedores = new System.Windows.Forms.ListView();
             this.imlProveedores = new System.Windows.Forms.ImageList(this.components);
+            this.dgvMostrarProveedores = new System.Windows.Forms.DataGridView();
+            this.lvwMostrarProveedores = new System.Windows.Forms.ListView();
             this.clmhName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmhTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmhUlt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dgvMostrarProveedores = new System.Windows.Forms.DataGridView();
-            this.ColumnNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEntidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnApertura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNumExp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnJuzgado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnJurisdiccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLiqRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scMostrarProveedores)).BeginInit();
             this.scMostrarProveedores.Panel1.SuspendLayout();
             this.scMostrarProveedores.Panel2.SuspendLayout();
@@ -83,6 +75,22 @@
             this.tvwMostrarProveedores.TabIndex = 0;
             this.tvwMostrarProveedores.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwMostrarProveedores_NodeMouseClick);
             // 
+            // imlProveedores
+            // 
+            this.imlProveedores.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlProveedores.ImageStream")));
+            this.imlProveedores.TransparentColor = System.Drawing.Color.Transparent;
+            this.imlProveedores.Images.SetKeyName(0, "ImagenCarpeta.png");
+            this.imlProveedores.Images.SetKeyName(1, "ImagenARchivo.png");
+            // 
+            // dgvMostrarProveedores
+            // 
+            this.dgvMostrarProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMostrarProveedores.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvMostrarProveedores.Location = new System.Drawing.Point(0, 309);
+            this.dgvMostrarProveedores.Name = "dgvMostrarProveedores";
+            this.dgvMostrarProveedores.Size = new System.Drawing.Size(845, 304);
+            this.dgvMostrarProveedores.TabIndex = 1;
+            // 
             // lvwMostrarProveedores
             // 
             this.lvwMostrarProveedores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -99,13 +107,7 @@
             this.lvwMostrarProveedores.TabIndex = 0;
             this.lvwMostrarProveedores.UseCompatibleStateImageBehavior = false;
             this.lvwMostrarProveedores.View = System.Windows.Forms.View.Details;
-            // 
-            // imlProveedores
-            // 
-            this.imlProveedores.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlProveedores.ImageStream")));
-            this.imlProveedores.TransparentColor = System.Drawing.Color.Transparent;
-            this.imlProveedores.Images.SetKeyName(0, "ImagenCarpeta.png");
-            this.imlProveedores.Images.SetKeyName(1, "ImagenARchivo.png");
+            this.lvwMostrarProveedores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwMostrarProveedores_MouseDoubleClick);
             // 
             // clmhName
             // 
@@ -119,64 +121,6 @@
             // 
             this.clmhUlt.Text = "Ult. Modificacion";
             this.clmhUlt.Width = 98;
-            // 
-            // dgvMostrarProveedores
-            // 
-            this.dgvMostrarProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrarProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnNum,
-            this.ColumnEntidad,
-            this.ColumnApertura,
-            this.ColumnNumExp,
-            this.ColumnJuzgado,
-            this.ColumnJurisdiccion,
-            this.ColumnDirección,
-            this.ColumnLiqRes});
-            this.dgvMostrarProveedores.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvMostrarProveedores.Location = new System.Drawing.Point(0, 309);
-            this.dgvMostrarProveedores.Name = "dgvMostrarProveedores";
-            this.dgvMostrarProveedores.Size = new System.Drawing.Size(845, 304);
-            this.dgvMostrarProveedores.TabIndex = 1;
-            // 
-            // ColumnNum
-            // 
-            this.ColumnNum.HeaderText = "N°";
-            this.ColumnNum.Name = "ColumnNum";
-            // 
-            // ColumnEntidad
-            // 
-            this.ColumnEntidad.HeaderText = "Entidad";
-            this.ColumnEntidad.Name = "ColumnEntidad";
-            // 
-            // ColumnApertura
-            // 
-            this.ColumnApertura.HeaderText = "Apertura";
-            this.ColumnApertura.Name = "ColumnApertura";
-            // 
-            // ColumnNumExp
-            // 
-            this.ColumnNumExp.HeaderText = "N° Expediente";
-            this.ColumnNumExp.Name = "ColumnNumExp";
-            // 
-            // ColumnJuzgado
-            // 
-            this.ColumnJuzgado.HeaderText = "Juzgado";
-            this.ColumnJuzgado.Name = "ColumnJuzgado";
-            // 
-            // ColumnJurisdiccion
-            // 
-            this.ColumnJurisdiccion.HeaderText = "Jurisdicción";
-            this.ColumnJurisdiccion.Name = "ColumnJurisdiccion";
-            // 
-            // ColumnDirección
-            // 
-            this.ColumnDirección.HeaderText = "Dirección";
-            this.ColumnDirección.Name = "ColumnDirección";
-            // 
-            // ColumnLiqRes
-            // 
-            this.ColumnLiqRes.HeaderText = "Liq Responsable";
-            this.ColumnLiqRes.Name = "ColumnLiqRes";
             // 
             // frmMostrarProveedores
             // 
@@ -211,13 +155,5 @@
         public System.Windows.Forms.ListView lvwMostrarProveedores;
         public System.Windows.Forms.TreeView tvwMostrarProveedores;
         private System.Windows.Forms.DataGridView dgvMostrarProveedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEntidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnApertura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumExp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnJuzgado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnJurisdiccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDirección;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLiqRes;
     }
 }

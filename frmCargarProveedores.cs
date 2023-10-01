@@ -19,7 +19,10 @@ namespace prySosaIEv
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            if(TxtNumero.Text == "" && txtEntidad.Text == "" && txtApertura.Text == "" && txtJuzgado.Text =="" && txtExpediente.Text == "" && txtJurisdiccion.Text == "" && txtDireccion.Text == "" && txtLiquidador.Text == "")
+            {
 
+            }
         }
     }
 }

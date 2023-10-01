@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
+using prySosaIEv.Properties;
 
 namespace prySosaIEv
 {
@@ -94,6 +95,33 @@ namespace prySosaIEv
 
                 lvwMostrarProveedores.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
+        }
+
+        string leerLinea;
+        string[] separarDatos;
+        private void lvwMostrarProveedores_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (dgvMostrarProveedores.Rows.Count == 0)
+            {
+                StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt");
+
+                leerLinea = sr.ReadLine();
+                separarDatos = leerLinea.Split(';');
+                for (int indice = 0; indice < separarDatos.Length; indice++)
+                {
+                    dgvMostrarProveedores.Columns.Add(separarDatos[indice], separarDatos[indice]);
+                }
+
+                while (sr.EndOfStream == false)
+                {
+                    leerLinea = sr.ReadLine();
+                    separarDatos = leerLinea.Split(';');
+                    dgvMostrarProveedores.Rows.Add(separarDatos);
+                }
+
+                sr.Close();
+            }
+            
         }
     }
 }

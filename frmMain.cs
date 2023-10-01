@@ -40,10 +40,11 @@ namespace prySosaIEv
                 frmMostrarProveedoress.TopMost = true;
                 contProv = 1;
                 frmCargarProveedoress.Hide();
+                contCargar = 0;
             }
             else
             {
-                frmMostrarProveedoress.Close();
+                
                 contProv = 0;
             }
             
@@ -69,7 +70,7 @@ namespace prySosaIEv
             }
             else
             {
-
+                contCargar = 0;
             }
 
 
