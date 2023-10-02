@@ -11,7 +11,7 @@ namespace prySosaIEv
     {
         public void Grabar(string datosConcatenados)
         {
-            StreamWriter AD = new StreamWriter("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt", true); //Abrir AdeD
+            StreamWriter AD = new StreamWriter("../../Resources/Carpetas de Proveedores/Datos Proveedores/ListadoAseguradores.csv", true); //Abrir AdeD
             AD.WriteLine(datosConcatenados); //Leer AdeD
             AD.Close(); //Cerrar AdeD
         }

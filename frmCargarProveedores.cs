@@ -16,7 +16,7 @@ namespace prySosaIEv
         {
             InitializeComponent();
         }
-        int numGuia = 6;
+        int numGuia = 158;
         clsArchivo grabado = new clsArchivo();
         
 

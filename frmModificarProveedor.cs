@@ -19,7 +19,7 @@ namespace prySosaIEv
             InitializeComponent();
         }
         
-        public static string rutaArchivo = "../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt";
+        public static string rutaArchivo = "../../Resources/Carpetas de Proveedores/Datos Proveedores/ListadoAseguradores.csv";
         public void btnModificar_Click(object sender, EventArgs e)
         {
             string posicion = frmMostrarProveedores.pos.ToString();

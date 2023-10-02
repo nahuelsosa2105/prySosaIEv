@@ -111,7 +111,7 @@ namespace prySosaIEv
             if (!grillaCreada)
             {
                 // Leemos el archivo de texto y creamos la grilla
-                StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt");
+                StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/ListadoAseguradores.csv");
 
                 string leerLinea;
                 string[] separarDatos;
@@ -176,7 +176,7 @@ namespace prySosaIEv
             dgvMostrarProveedores.Rows.Clear();
             dgvMostrarProveedores.Columns.Clear();
 
-            StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt");
+            StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/ListadoAseguradores.csv");
 
             string leerLinea;
             string[] separarDatos;
