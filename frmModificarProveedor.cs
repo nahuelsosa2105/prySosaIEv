@@ -96,6 +96,8 @@ namespace prySosaIEv
                     }
                 }
                 MessageBox.Show("Proveedor Borrado con exito");
+                frmMain.contProv = 0;
+                frmMain.contCargar = 0;
                 this.Hide();
             }
            

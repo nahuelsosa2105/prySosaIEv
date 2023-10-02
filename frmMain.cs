@@ -27,8 +27,8 @@ namespace prySosaIEv
 
         frmMostrarProveedores frmMostrarProveedoress = new frmMostrarProveedores();
         frmCargarProveedores frmCargarProveedoress = new frmCargarProveedores();
-        int contProv = 0;
-        int contCargar = 0;
+        public static int contProv = 0;
+        public static int contCargar = 0;
         
         public void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -56,6 +56,8 @@ namespace prySosaIEv
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
+            frmMostrarProveedoress.Close();
+            frmCargarProveedoress.Close();
             frmInicioDeSesion frminiciar = new frmInicioDeSesion();
             frminiciar.Show();
         }

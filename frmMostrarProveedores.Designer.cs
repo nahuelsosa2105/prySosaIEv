@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMostrarProveedores));
             this.scMostrarProveedores = new System.Windows.Forms.SplitContainer();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.tvwMostrarProveedores = new System.Windows.Forms.TreeView();
             this.imlProveedores = new System.Windows.Forms.ImageList(this.components);
             this.dgvMostrarProveedores = new System.Windows.Forms.DataGridView();
@@ -38,7 +39,6 @@
             this.clmhName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmhTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmhUlt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scMostrarProveedores)).BeginInit();
             this.scMostrarProveedores.Panel1.SuspendLayout();
             this.scMostrarProveedores.Panel2.SuspendLayout();
@@ -64,6 +64,21 @@
             this.scMostrarProveedores.Size = new System.Drawing.Size(1090, 613);
             this.scMostrarProveedores.SplitterDistance = 241;
             this.scMostrarProveedores.TabIndex = 0;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(0, 542);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(241, 71);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "ACTUALIZAR \r\nDATOS";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // tvwMostrarProveedores
             // 
@@ -127,24 +142,11 @@
             this.clmhUlt.Text = "Ult. Modificacion";
             this.clmhUlt.Width = 98;
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(0, 542);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(241, 71);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "ACTUALIZAR \r\nDATOS";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // frmMostrarProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1090, 613);
             this.Controls.Add(this.scMostrarProveedores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

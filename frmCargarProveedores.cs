@@ -90,7 +90,9 @@ namespace prySosaIEv
                                             txtDireccion.Clear();
                                             txtLiquidador.Clear();
                                             MessageBox.Show("Proveedor cargado correctamente");
-                                         }
+                                            frmMain.contProv = 0;
+                                            frmMain.contCargar = 0;
+                                    }
 
                                 }
                             }

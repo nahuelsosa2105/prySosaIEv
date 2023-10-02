@@ -200,6 +200,7 @@ namespace prySosaIEv
             sr.Close();
 
             MessageBox.Show("Grilla Actualizada");
+            
         }
     }
 }

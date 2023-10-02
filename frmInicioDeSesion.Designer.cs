@@ -95,11 +95,11 @@
             // 
             // btnReestablecer
             // 
-            this.btnReestablecer.BackColor = System.Drawing.Color.White;
+            this.btnReestablecer.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnReestablecer.Enabled = false;
             this.btnReestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReestablecer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReestablecer.ForeColor = System.Drawing.Color.Black;
+            this.btnReestablecer.ForeColor = System.Drawing.Color.White;
             this.btnReestablecer.Location = new System.Drawing.Point(30, 472);
             this.btnReestablecer.Name = "btnReestablecer";
             this.btnReestablecer.Size = new System.Drawing.Size(432, 40);
@@ -118,10 +118,10 @@
             // 
             // btnNuevoUsuario
             // 
-            this.btnNuevoUsuario.BackColor = System.Drawing.Color.White;
+            this.btnNuevoUsuario.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoUsuario.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevoUsuario.ForeColor = System.Drawing.Color.White;
             this.btnNuevoUsuario.Location = new System.Drawing.Point(30, 559);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
             this.btnNuevoUsuario.Size = new System.Drawing.Size(431, 38);
@@ -132,10 +132,10 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.White;
+            this.btnIngresar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.Color.Black;
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
             this.btnIngresar.Location = new System.Drawing.Point(29, 408);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(432, 40);
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(516, 650);
             this.Controls.Add(this.pctMostrarConstraseña);
             this.Controls.Add(this.pctOcultar);

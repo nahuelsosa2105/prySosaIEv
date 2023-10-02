@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificarProveedor));
             this.lblModificarNumProveedor = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -64,9 +65,10 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(496, 353);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(252, 48);
@@ -77,9 +79,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.White;
+            this.btnModificar.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(496, 274);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(252, 48);
@@ -244,9 +247,10 @@
             // 
             // btnBorrarProveedor
             // 
-            this.btnBorrarProveedor.BackColor = System.Drawing.Color.White;
+            this.btnBorrarProveedor.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnBorrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBorrarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarProveedor.ForeColor = System.Drawing.Color.White;
             this.btnBorrarProveedor.Location = new System.Drawing.Point(495, 417);
             this.btnBorrarProveedor.Name = "btnBorrarProveedor";
             this.btnBorrarProveedor.Size = new System.Drawing.Size(252, 48);
@@ -259,6 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(784, 482);
             this.Controls.Add(this.btnBorrarProveedor);
             this.Controls.Add(this.lblModificarNumProveedor);
@@ -280,6 +285,10 @@
             this.Controls.Add(this.lblEntidad);
             this.Controls.Add(this.txtModificarEntidad);
             this.Controls.Add(this.lblNumero);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmModificarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmModificarProveedor";
