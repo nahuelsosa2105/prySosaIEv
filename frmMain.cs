@@ -35,13 +35,14 @@ namespace prySosaIEv
 
             if (contProv == 0)
             {
-                
+                frmMostrarProveedoress.Activate();
                 frmMostrarProveedoress.Show();
                 frmMostrarProveedoress.TopMost = true;
                 contProv = 1;
                 frmCargarProveedoress.Hide();
                 contCargar = 0;
-            }
+                
+    }
             else
             {
                 

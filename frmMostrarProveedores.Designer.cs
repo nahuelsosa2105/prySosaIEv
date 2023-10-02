@@ -90,6 +90,9 @@
             this.dgvMostrarProveedores.Name = "dgvMostrarProveedores";
             this.dgvMostrarProveedores.Size = new System.Drawing.Size(845, 304);
             this.dgvMostrarProveedores.TabIndex = 1;
+            this.dgvMostrarProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarProveedores_CellClick);
+            this.dgvMostrarProveedores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarProveedores_CellContentDoubleClick);
+            this.dgvMostrarProveedores.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMostrarProveedores_CellMouseDoubleClick);
             // 
             // lvwMostrarProveedores
             // 
@@ -154,6 +157,6 @@
         private System.Windows.Forms.ColumnHeader clmhUlt;
         public System.Windows.Forms.ListView lvwMostrarProveedores;
         public System.Windows.Forms.TreeView tvwMostrarProveedores;
-        private System.Windows.Forms.DataGridView dgvMostrarProveedores;
+        public System.Windows.Forms.DataGridView dgvMostrarProveedores;
     }
 }

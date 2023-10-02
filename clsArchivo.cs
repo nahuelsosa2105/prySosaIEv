@@ -15,5 +15,7 @@ namespace prySosaIEv
             AD.WriteLine(datosConcatenados); //Leer AdeD
             AD.Close(); //Cerrar AdeD
         }
+
+        
     }
 }

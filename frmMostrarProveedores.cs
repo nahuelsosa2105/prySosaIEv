@@ -11,24 +11,27 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using prySosaIEv.Properties;
+using System.Data;
 
 namespace prySosaIEv
 {
     public partial class frmMostrarProveedores : Form
     {
+        private frmModificarProveedor modificarProveedor;
         public frmMostrarProveedores()
         {
             InitializeComponent();
             PopulateTreeView();
-            
+            modificarProveedor = new frmModificarProveedor();
         }
-
-        private void frmMostrarProveedores_Load(object sender, EventArgs e)
+        
+        public void frmMostrarProveedores_Load(object sender, EventArgs e)
         {
             
+            frmModificarProveedor modificarProveedor = new frmModificarProveedor();
         }
 
-        private void PopulateTreeView()
+        public void PopulateTreeView()
         {
             TreeNode rootNode;
 
@@ -42,7 +45,7 @@ namespace prySosaIEv
             }
         }
 
-        private void GetDirectories(DirectoryInfo[] subDirs,
+        public void GetDirectories(DirectoryInfo[] subDirs,
             TreeNode nodeToAddTo)
         {
             TreeNode aNode;
@@ -61,7 +64,7 @@ namespace prySosaIEv
             }
         }
 
-        private void tvwMostrarProveedores_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        public void tvwMostrarProveedores_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             
             {
@@ -99,14 +102,22 @@ namespace prySosaIEv
 
         string leerLinea;
         string[] separarDatos;
-        private void lvwMostrarProveedores_MouseDoubleClick(object sender, MouseEventArgs e)
+        private bool grillaCreada = false;
+        
+        public void lvwMostrarProveedores_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (dgvMostrarProveedores.Rows.Count == 0)
+
+            if (!grillaCreada)
             {
+                // Leemos el archivo de texto y creamos la grilla
                 StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt");
+
+                string leerLinea;
+                string[] separarDatos;
 
                 leerLinea = sr.ReadLine();
                 separarDatos = leerLinea.Split(';');
+
                 for (int indice = 0; indice < separarDatos.Length; indice++)
                 {
                     dgvMostrarProveedores.Columns.Add(separarDatos[indice], separarDatos[indice]);
@@ -120,8 +131,69 @@ namespace prySosaIEv
                 }
 
                 sr.Close();
+
+                grillaCreada = true;
             }
+            else
+            {
+                // Actualizamos los datos de la grilla
+               dgvMostrarProveedores.Rows.Clear();
+               dgvMostrarProveedores.Columns.Clear();
+
+                StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt");
+
+                string leerLinea;
+                string[] separarDatos;
+
+                leerLinea = sr.ReadLine();
+                separarDatos = leerLinea.Split(';');
+
+                for (int indice = 0; indice < separarDatos.Length; indice++)
+                {
+                    dgvMostrarProveedores.Columns.Add(separarDatos[indice], separarDatos[indice]);
+                }
+
+                while (sr.EndOfStream == false)
+                {
+                    leerLinea = sr.ReadLine();
+                    separarDatos = leerLinea.Split(';');
+                    dgvMostrarProveedores.Rows.Add(separarDatos);
+
+                }
+
+                sr.Close();
+
+                MessageBox.Show("Grilla Actualizada");
+            }
+
+
+        }
+
+        private void dgvMostrarProveedores_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
             
+        }
+
+        public void dgvMostrarProveedores_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        public static int pos = 0;
+        private void dgvMostrarProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pos =  dgvMostrarProveedores.CurrentRow.Index;
+
+            modificarProveedor.lblModificarNumProveedor.Text = dgvMostrarProveedores[0, pos].Value.ToString();
+            modificarProveedor.txtModificarEntidad.Text = dgvMostrarProveedores[1, pos].Value.ToString();
+            modificarProveedor.txtModificarApertura.Text = dgvMostrarProveedores[2, pos].Value.ToString();
+            modificarProveedor.txtModificarExpediente.Text = dgvMostrarProveedores[3, pos].Value.ToString();
+            modificarProveedor.txtModificarJuzgado.Text = dgvMostrarProveedores[4, pos].Value.ToString();
+            modificarProveedor.txtModificarJurisdiccion.Text = dgvMostrarProveedores[5, pos].Value.ToString();
+            modificarProveedor.txtModificarDireccion.Text = dgvMostrarProveedores[6, pos].Value.ToString();
+            modificarProveedor.txtModificarLiquidador.Text = dgvMostrarProveedores[7, pos].Value.ToString();
+
+            this.Hide();
+            modificarProveedor.Show();
         }
     }
 }

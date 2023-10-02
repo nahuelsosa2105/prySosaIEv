@@ -71,6 +71,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarProveedor.Designer.cs">
+      <DependentUpon>frmModificarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMostrarProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarProveedor.resx">
+      <DependentUpon>frmModificarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMostrarProveedores.resx">
       <DependentUpon>frmMostrarProveedores.cs</DependentUpon>
