@@ -22,16 +22,16 @@ namespace prySosaIEv
         public static string rutaArchivo = "../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt";
         public void btnModificar_Click(object sender, EventArgs e)
         {
-            string posicion =  frmMostrarProveedores.pos.ToString();
+            string posicion = frmMostrarProveedores.pos.ToString();
             List<string> lista = new List<string>();
             using (StreamReader leer = new StreamReader(rutaArchivo))
             {
                 string linea;
-                while((linea = leer.ReadLine()) != null)
+                while ((linea = leer.ReadLine()) != null)
                 {
                     string[] parametros = linea.Split(';');
 
-                    if (parametros[0] != posicion)
+                    if (parametros[0] != frmMostrarProveedores.pos.ToString())
                     {
                         lista.Add(linea);
                     }
@@ -43,9 +43,9 @@ namespace prySosaIEv
                 }
             }
 
-            using(StreamWriter escribir = new StreamWriter(rutaArchivo))
+            using (StreamWriter escribir = new StreamWriter(rutaArchivo))
             {
-                foreach(string linea in lista)
+                foreach (string linea in lista)
                 {
                     escribir.WriteLine(linea);
                 }
@@ -54,7 +54,7 @@ namespace prySosaIEv
             MessageBox.Show("Proveedor Modificado con exito");
             this.Hide();
         }
-        
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtModificarEntidad.Clear();
@@ -64,6 +64,43 @@ namespace prySosaIEv
             txtModificarJurisdiccion.Clear();
             txtModificarDireccion.Clear();
             txtModificarLiquidador.Clear();
+        }
+
+        private void btnBorrarProveedor_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea borrar este proveedor?", "Borrar Proveedor", MessageBoxButtons.YesNo);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                string posicion = frmMostrarProveedores.pos.ToString();
+                List<string> lista = new List<string>();
+                using (StreamReader leer = new StreamReader(rutaArchivo))
+                {
+                    string linea;
+                    while ((linea = leer.ReadLine()) != null)
+                    {
+                        string[] parametros = linea.Split(';');
+
+                        if (parametros[0] != frmMostrarProveedores.pos.ToString())
+                        {
+                            lista.Add(linea);
+                        }
+                    }
+                }
+
+                using (StreamWriter escribir = new StreamWriter(rutaArchivo))
+                {
+                    foreach (string linea in lista)
+                    {
+                        escribir.WriteLine(linea);
+                    }
+                }
+                MessageBox.Show("Proveedor Borrado con exito");
+                this.Hide();
+            }
+           
+
+        
         }
     }
     

@@ -38,6 +38,7 @@
             this.clmhName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmhTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmhUlt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scMostrarProveedores)).BeginInit();
             this.scMostrarProveedores.Panel1.SuspendLayout();
             this.scMostrarProveedores.Panel2.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // scMostrarProveedores.Panel1
             // 
+            this.scMostrarProveedores.Panel1.Controls.Add(this.btnActualizar);
             this.scMostrarProveedores.Panel1.Controls.Add(this.tvwMostrarProveedores);
             // 
             // scMostrarProveedores.Panel2
@@ -65,13 +67,13 @@
             // 
             // tvwMostrarProveedores
             // 
-            this.tvwMostrarProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvwMostrarProveedores.Dock = System.Windows.Forms.DockStyle.Top;
             this.tvwMostrarProveedores.ImageIndex = 0;
             this.tvwMostrarProveedores.ImageList = this.imlProveedores;
             this.tvwMostrarProveedores.Location = new System.Drawing.Point(0, 0);
             this.tvwMostrarProveedores.Name = "tvwMostrarProveedores";
             this.tvwMostrarProveedores.SelectedImageIndex = 0;
-            this.tvwMostrarProveedores.Size = new System.Drawing.Size(241, 613);
+            this.tvwMostrarProveedores.Size = new System.Drawing.Size(241, 542);
             this.tvwMostrarProveedores.TabIndex = 0;
             this.tvwMostrarProveedores.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwMostrarProveedores_NodeMouseClick);
             // 
@@ -125,6 +127,19 @@
             this.clmhUlt.Text = "Ult. Modificacion";
             this.clmhUlt.Width = 98;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(0, 542);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(241, 71);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "ACTUALIZAR \r\nDATOS";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // frmMostrarProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +173,6 @@
         public System.Windows.Forms.ListView lvwMostrarProveedores;
         public System.Windows.Forms.TreeView tvwMostrarProveedores;
         public System.Windows.Forms.DataGridView dgvMostrarProveedores;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

@@ -47,6 +47,7 @@
             this.txtModificarEntidad = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
             this.pctlogoPeq = new System.Windows.Forms.PictureBox();
+            this.btnBorrarProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctlogoPeq)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,11 +242,25 @@
             this.pctlogoPeq.TabIndex = 58;
             this.pctlogoPeq.TabStop = false;
             // 
+            // btnBorrarProveedor
+            // 
+            this.btnBorrarProveedor.BackColor = System.Drawing.Color.White;
+            this.btnBorrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBorrarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarProveedor.Location = new System.Drawing.Point(495, 417);
+            this.btnBorrarProveedor.Name = "btnBorrarProveedor";
+            this.btnBorrarProveedor.Size = new System.Drawing.Size(252, 48);
+            this.btnBorrarProveedor.TabIndex = 60;
+            this.btnBorrarProveedor.Text = "BORRAR";
+            this.btnBorrarProveedor.UseVisualStyleBackColor = false;
+            this.btnBorrarProveedor.Click += new System.EventHandler(this.btnBorrarProveedor_Click);
+            // 
             // frmModificarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 477);
+            this.ClientSize = new System.Drawing.Size(784, 482);
+            this.Controls.Add(this.btnBorrarProveedor);
             this.Controls.Add(this.lblModificarNumProveedor);
             this.Controls.Add(this.pctlogoPeq);
             this.Controls.Add(this.btnLimpiar);
@@ -294,5 +309,6 @@
         public System.Windows.Forms.TextBox txtModificarDireccion;
         public System.Windows.Forms.TextBox txtModificarLiquidador;
         public System.Windows.Forms.TextBox txtModificarApertura;
+        private System.Windows.Forms.Button btnBorrarProveedor;
     }
 }

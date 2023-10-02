@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using prySosaIEv.Properties;
 using System.Data;
+using System.Windows.Forms;
 
 namespace prySosaIEv
 {
@@ -136,34 +137,7 @@ namespace prySosaIEv
             }
             else
             {
-                // Actualizamos los datos de la grilla
-               dgvMostrarProveedores.Rows.Clear();
-               dgvMostrarProveedores.Columns.Clear();
-
-                StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt");
-
-                string leerLinea;
-                string[] separarDatos;
-
-                leerLinea = sr.ReadLine();
-                separarDatos = leerLinea.Split(';');
-
-                for (int indice = 0; indice < separarDatos.Length; indice++)
-                {
-                    dgvMostrarProveedores.Columns.Add(separarDatos[indice], separarDatos[indice]);
-                }
-
-                while (sr.EndOfStream == false)
-                {
-                    leerLinea = sr.ReadLine();
-                    separarDatos = leerLinea.Split(';');
-                    dgvMostrarProveedores.Rows.Add(separarDatos);
-
-                }
-
-                sr.Close();
-
-                MessageBox.Show("Grilla Actualizada");
+              
             }
 
 
@@ -178,12 +152,12 @@ namespace prySosaIEv
         {
         }
 
-        public static int pos = 0;
+        public static int pos ;
         private void dgvMostrarProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            pos =  dgvMostrarProveedores.CurrentRow.Index;
-
-            modificarProveedor.lblModificarNumProveedor.Text = dgvMostrarProveedores[0, pos].Value.ToString();
+            pos =1+ dgvMostrarProveedores.CurrentRow.Index;
+            
+            modificarProveedor.lblModificarNumProveedor.Text = dgvMostrarProveedores[0, pos-1].Value.ToString();
             modificarProveedor.txtModificarEntidad.Text = dgvMostrarProveedores[1, pos].Value.ToString();
             modificarProveedor.txtModificarApertura.Text = dgvMostrarProveedores[2, pos].Value.ToString();
             modificarProveedor.txtModificarExpediente.Text = dgvMostrarProveedores[3, pos].Value.ToString();
@@ -194,6 +168,38 @@ namespace prySosaIEv
 
             this.Hide();
             modificarProveedor.Show();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            // Actualizamos los datos de la grilla
+            dgvMostrarProveedores.Rows.Clear();
+            dgvMostrarProveedores.Columns.Clear();
+
+            StreamReader sr = new StreamReader("../../Resources/Carpetas de Proveedores/Datos Proveedores/datosProveedorConPuntoComa.txt");
+
+            string leerLinea;
+            string[] separarDatos;
+
+            leerLinea = sr.ReadLine();
+            separarDatos = leerLinea.Split(';');
+
+            for (int indice = 0; indice < separarDatos.Length; indice++)
+            {
+                dgvMostrarProveedores.Columns.Add(separarDatos[indice], separarDatos[indice]);
+            }
+
+            while (sr.EndOfStream == false)
+            {
+                leerLinea = sr.ReadLine();
+                separarDatos = leerLinea.Split(';');
+                dgvMostrarProveedores.Rows.Add(separarDatos);
+
+            }
+
+            sr.Close();
+
+            MessageBox.Show("Grilla Actualizada");
         }
     }
 }
