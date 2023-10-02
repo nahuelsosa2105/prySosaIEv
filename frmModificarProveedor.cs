@@ -54,7 +54,17 @@ namespace prySosaIEv
             MessageBox.Show("Proveedor Modificado con exito");
             this.Hide();
         }
-
+        
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtModificarEntidad.Clear();
+            txtModificarApertura.Clear();
+            txtModificarExpediente.Clear();
+            txtModificarJuzgado.Clear();
+            txtModificarJurisdiccion.Clear();
+            txtModificarDireccion.Clear();
+            txtModificarLiquidador.Clear();
+        }
     }
     
 }
