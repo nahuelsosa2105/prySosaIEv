@@ -73,12 +73,13 @@ namespace prySosaIEv
             if (respuesta == DialogResult.Yes)
             {
                 string posicion = frmMostrarProveedores.pos.ToString();
+                //crea una nueva lista de strings
                 List<string> lista = new List<string>();
                 using (StreamReader leer = new StreamReader(rutaArchivo))
-                {
+                {//El código luego abre el archivo de texto para lectura
                     string linea;
                     while ((linea = leer.ReadLine()) != null)
-                    {
+                    {//Para cada línea del archivo de texto, el código separa los datos de la línea en una matriz de strings
                         string[] parametros = linea.Split(';');
 
                         if (parametros[0] != frmMostrarProveedores.pos.ToString())
@@ -87,7 +88,7 @@ namespace prySosaIEv
                         }
                     }
                 }
-
+                // recorre la lista lista y escribe cada línea de la lista en el archivo de texto.
                 using (StreamWriter escribir = new StreamWriter(rutaArchivo))
                 {
                     foreach (string linea in lista)

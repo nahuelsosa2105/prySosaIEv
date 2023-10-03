@@ -74,11 +74,12 @@ namespace prySosaIEv
                                         }
                                          else
                                          {
-                                            string[] datosProveedores = new string[] {numGuia.ToString(),txtEntidad.Text,txtApertura.Text,txtExpediente.Text,txtJuzgado.Text,txtJurisdiccion.Text,txtDireccion.Text,txtLiquidador.Text };
-
-                                            string datosConcatenados = string.Join(";", datosProveedores);
-
-                                             grabado.Grabar(datosConcatenados);
+                                        //crea una nueva matriz de strings llamada datosProveedores. 
+                                        string[] datosProveedores = new string[] {numGuia.ToString(),txtEntidad.Text,txtApertura.Text,txtExpediente.Text,txtJuzgado.Text,txtJurisdiccion.Text,txtDireccion.Text,txtLiquidador.Text };
+                                        //El código luego crea una nueva cadena llamada datosConcatenados. Esta cadena contiene los valores de la matriz datosProveedores, separados por comas.
+                                        string datosConcatenados = string.Join(";", datosProveedores);
+                                        //El código luego llama al método Grabar() de la clase grabado. Este método escribe la cadena datosConcatenados en un archivo de texto
+                                        grabado.Grabar(datosConcatenados);
 
                                              numGuia++;
                                             lblNumProveedor.Text = numGuia.ToString();
