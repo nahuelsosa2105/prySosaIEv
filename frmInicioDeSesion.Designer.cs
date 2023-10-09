@@ -41,6 +41,7 @@
             this.pctMostrarConstraseña = new System.Windows.Forms.PictureBox();
             this.pctOcultar = new System.Windows.Forms.PictureBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctMostrarConstraseña)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -178,12 +179,23 @@
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(387, 604);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmInicioDeSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(516, 650);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pctMostrarConstraseña);
             this.Controls.Add(this.pctOcultar);
             this.Controls.Add(this.lblReestablecer);
@@ -214,15 +226,16 @@
 
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Label lblNombreDeUsuario;
-        private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label lblReestablecer;
         private System.Windows.Forms.Button btnReestablecer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNuevoUsuario;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.PictureBox pctOcultar;
         private System.Windows.Forms.PictureBox pctMostrarConstraseña;
+        public System.Windows.Forms.TextBox txtNombreUsuario;
+        public System.Windows.Forms.TextBox txtContraseña;
+        public System.Windows.Forms.Label lblReestablecer;
+        private System.Windows.Forms.Button button1;
     }
 }

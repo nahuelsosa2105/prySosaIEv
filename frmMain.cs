@@ -93,5 +93,10 @@ namespace prySosaIEv
             frmMostrarProveedores.Close();
 
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

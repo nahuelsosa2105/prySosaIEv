@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Odbc;
+using System.Data.OleDb;
 
 namespace prySosaIEv
 {
@@ -43,9 +45,10 @@ namespace prySosaIEv
             }
             
         }
-
-        private void btnNuevoUsuario_Click(object sender, EventArgs e)
+        
+        public void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
+//            Data;
             MessageBox.Show("En proceso de desarrollo, disculpe las molestias");
         }
 
@@ -59,6 +62,13 @@ namespace prySosaIEv
         {
             pctMostrarConstraseña.BringToFront();
             txtContraseña.PasswordChar = '*';
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            clsLogin objLogin = new clsLogin();
+
+            objLogin.AbridBD();
         }
     }
 }
