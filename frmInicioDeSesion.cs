@@ -26,29 +26,36 @@ namespace prySosaIEv
 
         public static string usuario;
         public static string contraseña;
+        int contador = 0;
 
-        
         public void btnIngresar_Click(object sender, EventArgs e)
         {
+           
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+
             usuario = txtNombreUsuario.Text;
             contraseña = txtContraseña.Text;
-
+           
             clsLogin login = new clsLogin();
             login.BuscarUsuario();
 
             if (clsLogin.respuesta == true)
             {
-                
                 this.Hide();
                 frmMain frmMain = new frmMain();
                 frmMain.Show();
             }
             else
             {
+                contador = contador + 1;
                 MessageBox.Show("Usuario o Contraeña incorrectos", "ERROR" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (contador > 2)
+                {
+                    btnIngresar.Enabled = false;
+                    contador = 0;
+                }
             }
-           
-
         }
 
         public void btnNuevoUsuario_Click(object sender, EventArgs e)

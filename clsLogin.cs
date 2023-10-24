@@ -21,7 +21,7 @@ namespace prySosaIEv
 
         string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BaseDeDatosUsuarios.accdb";
 
-        public string estadoConexion;
+      
 
         public string datosTabla = "";
 
@@ -52,7 +52,7 @@ namespace prySosaIEv
             
             if (lectorBD.HasRows)
             {
-                bool Find = false;
+               
                 while(lectorBD.Read())
                 {
                     string usuarioBD = lectorBD[1].ToString();

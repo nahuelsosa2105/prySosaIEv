@@ -139,7 +139,7 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(29, 408);
+            this.btnIngresar.Location = new System.Drawing.Point(30, 401);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(432, 40);
             this.btnIngresar.TabIndex = 2;
