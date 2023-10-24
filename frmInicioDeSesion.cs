@@ -24,28 +24,33 @@ namespace prySosaIEv
             Application.Exit();
         }
 
+        public static string usuario;
+        public static string contraseña;
+
         
-        private void btnIngresar_Click(object sender, EventArgs e)
+        public void btnIngresar_Click(object sender, EventArgs e)
         {
-            string usuario = txtNombreUsuario.Text;
-            string contraseña =txtContraseña.Text;
+            usuario = txtNombreUsuario.Text;
+            contraseña = txtContraseña.Text;
 
-            
+            clsLogin login = new clsLogin();
+            login.BuscarUsuario();
 
-
-            if (usuario == "admin" && contraseña == "admin")
+            if (clsLogin.respuesta == true)
             {
+                
                 this.Hide();
                 frmMain frmMain = new frmMain();
                 frmMain.Show();
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrecto");
+                MessageBox.Show("Usuario o Contraeña incorrectos", "ERROR" , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+           
+
         }
-        
+
         public void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
 //            Data;
@@ -66,9 +71,19 @@ namespace prySosaIEv
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clsLogin objLogin = new clsLogin();
+            //clsLogin objLogin = new clsLogin();
 
-            objLogin.AbridBD();
+            //objLogin.AbridBD(resp);
+        }
+
+        private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+            usuario = txtNombreUsuario.Text;
+        }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            contraseña = txtContraseña.Text;
         }
     }
 }
