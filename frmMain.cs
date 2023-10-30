@@ -98,5 +98,10 @@ namespace prySosaIEv
         {
 
         }
+
+        private void baseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
