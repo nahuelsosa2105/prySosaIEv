@@ -14,6 +14,7 @@ namespace prySosaIEv
 {
     public partial class frmInicioDeSesion : Form
     {
+        clsLogs objUsuario;
         public frmInicioDeSesion()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace prySosaIEv
         public static string usuario;
         public static string contraseña;
         int contador = 0;
+        
 
         public void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -38,10 +40,17 @@ namespace prySosaIEv
             contraseña = txtContraseña.Text;
            
             clsLogin login = new clsLogin();
+            clsLogs objUsuario = new clsLogs();
             login.BuscarUsuario();
+            objUsuario.ValidarUsuario(txtNombreUsuario.Text, txtContraseña.Text);
 
             if (clsLogin.respuesta == true)
             {
+
+                MessageBox.Show("Ingrese al sistema...");
+                objUsuario.RegistroLogInicioSesion();
+                
+               
                 this.Hide();
                 frmMain frmMain = new frmMain();
                 frmMain.Show();
@@ -91,6 +100,11 @@ namespace prySosaIEv
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             contraseña = txtContraseña.Text;
+        }
+
+        private void frmInicioDeSesion_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

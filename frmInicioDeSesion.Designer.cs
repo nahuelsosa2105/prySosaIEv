@@ -216,6 +216,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmInicioDeSesion_FormClosed);
+            this.Load += new System.EventHandler(this.frmInicioDeSesion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctMostrarConstraseña)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();

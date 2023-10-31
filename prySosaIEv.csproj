@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="clsArchivo.cs" />
     <Compile Include="clsLogin.cs" />
+    <Compile Include="clsLogs.cs" />
     <Compile Include="frmMostrarBase.cs">
       <SubType>Form</SubType>
     </Compile>
