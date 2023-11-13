@@ -45,6 +45,9 @@ namespace prySosaIEv
         {
             try
             {
+
+                conexionBD.Open();
+
                 comandoBD = new OleDbCommand();
 
                 comandoBD.Connection = conexionBD;
@@ -59,7 +62,7 @@ namespace prySosaIEv
                 DataRow nuevoRegistro = objTabla.NewRow();
 
                 nuevoRegistro["Categoria"] = "admin";
-                nuevoRegistro["FechaHora"] = DateTime.Now;
+                nuevoRegistro["Fecha/Hora"] = DateTime.Now;
                 nuevoRegistro["Descripcion"] = "Inicio exitoso";
 
                 objTabla.Rows.Add(nuevoRegistro);

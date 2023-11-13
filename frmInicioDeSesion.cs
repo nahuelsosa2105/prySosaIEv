@@ -46,9 +46,9 @@ namespace prySosaIEv
 
             if (clsLogin.respuesta == true)
             {
-
-                MessageBox.Show("Ingrese al sistema...");
                 objUsuario.RegistroLogInicioSesion();
+                MessageBox.Show("Ingrese al sistema...");
+                
                 
                
                 this.Hide();
