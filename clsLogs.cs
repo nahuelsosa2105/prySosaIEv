@@ -63,7 +63,7 @@ namespace prySosaIEv
                 DataRow nuevoRegistro = objTabla.NewRow();
 
                 nuevoRegistro["Categoria"] = "admin";
-                nuevoRegistro["Fecha/Hora"] = DateTime.Now;
+              // nuevoRegistro["Fecha/Hora"] = "1/1/21";
                 nuevoRegistro["Descripcion"] = "Inicio exitoso";
 
                 objTabla.Rows.Add(nuevoRegistro);
