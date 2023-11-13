@@ -21,7 +21,7 @@ namespace prySosaIEv
 
         string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BaseDeDatosUsuarios.accdb";
 
-      
+        public string conexion = "";
 
         public string datosTabla = "";
 
@@ -104,6 +104,10 @@ namespace prySosaIEv
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
 
                 adaptadorBD.Update(objDS, "users");
+            }
+            catch (Exception ex)
+            {
+                conexion = ex.Message;
             }
         }
 
