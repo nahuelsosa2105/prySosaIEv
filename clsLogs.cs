@@ -45,7 +45,6 @@ namespace prySosaIEv
         {
             try
             {
-
                 conexionBD.Open();
 
                 comandoBD = new OleDbCommand();

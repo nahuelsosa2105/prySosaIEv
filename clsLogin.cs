@@ -73,6 +73,39 @@ namespace prySosaIEv
             }
         }
 
+        DataSet objDS;
+        public void CrearCuenta()
+        {
+            try
+            {
+                conectarBD();
+
+                comandoBD = new OleDbCommand();
+
+                comandoBD.Connection = conexionBD;
+
+                comandoBD.CommandType = System.Data.CommandType.TableDirect;
+
+                comandoBD.CommandText = "users";
+
+                OleDbDataAdapter adaptadorBD = new OleDbDataAdapter(comandoBD);
+
+                adaptadorBD.Fill(objDS, "users");
+
+                DataTable objTabla = objDS.Tables["users"];
+
+                DataRow nuevoRegistro = objTabla.NewRow();
+
+                nuevoRegistro["Usuario"] = AgregarUsuario.usuario;
+                nuevoRegistro["contraseña"] = AgregarUsuario.Contraseña;
+
+                objTabla.Rows.Add(nuevoRegistro);
+
+                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
+
+                adaptadorBD.Update(objDS, "users");
+            }
+        }
 
         
     }
