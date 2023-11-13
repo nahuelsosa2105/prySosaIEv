@@ -45,6 +45,8 @@ namespace prySosaIEv
         {
             try
             {
+                conexionBD = new OleDbConnection();
+                conexionBD.ConnectionString = rutaArchivo;
                 conexionBD.Open();
 
                 comandoBD = new OleDbCommand();

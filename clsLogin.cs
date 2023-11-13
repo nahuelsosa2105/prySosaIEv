@@ -96,8 +96,8 @@ namespace prySosaIEv
 
                 DataRow nuevoRegistro = objTabla.NewRow();
 
-                nuevoRegistro["Usuario"] = AgregarUsuario.usuario;
-                nuevoRegistro["contraseña"] = AgregarUsuario.Contraseña;
+                //nuevoRegistro["Usuario"] = AgregarUsuario.usuario;
+                //nuevoRegistro["contraseña"] = AgregarUsuario.Contraseña;
 
                 objTabla.Rows.Add(nuevoRegistro);
 
