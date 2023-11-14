@@ -32,6 +32,9 @@ namespace prySosaIEv
         
         public void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            clsLogs objUsuario = new clsLogs();
+            frmInicioDeSesion.accion = "Mostrar Proveedores y clientes";
+            objUsuario.RegistroLogInicioSesion();
 
             if (contProv == 0)
             {
@@ -55,6 +58,10 @@ namespace prySosaIEv
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            clsLogs objUsuario = new clsLogs();
+            frmInicioDeSesion.accion = "Cerrar Sesion";
+            objUsuario.RegistroLogInicioSesion();
+
             this.Hide();
             frmMostrarProveedoress.Close();
             frmCargarProveedoress.Close();
@@ -64,7 +71,10 @@ namespace prySosaIEv
 
         public void cargarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(contCargar == 0)
+            clsLogs objUsuario = new clsLogs();
+            frmInicioDeSesion.accion = "Cargar nuevos Proveedores o clientes";
+            objUsuario.RegistroLogInicioSesion();
+            if (contCargar == 0)
             {
                 frmCargarProveedoress.Show();
                 frmCargarProveedoress.TopMost = true;
