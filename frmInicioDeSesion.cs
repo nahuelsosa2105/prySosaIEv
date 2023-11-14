@@ -119,5 +119,12 @@ namespace prySosaIEv
                 this.Close();
             }
         }
+
+        private void btnReestablecer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmReestablecerPass pasar = new frmReestablecerPass();
+            pasar.Show();
+        }
     }
 }

@@ -116,7 +116,7 @@ namespace prySosaIEv
                 MessageBox.Show(ex.Message);
             }
         }
-     
+
         /*
         public void CrearCuenta()
         {
@@ -149,6 +149,34 @@ namespace prySosaIEv
             }
         }
         */
+
+        public void Reestablecer(string usuario, string nuevaContraseña)
+        {
+            using (OleDbConnection conexionBD = new OleDbConnection(cadenaConexion))
+            {
+                try
+                {
+                    conexionBD.Open();
+
+                    string consultaUpdate = "UPDATE users SET password = ? WHERE usuario = ?";
+
+                    using (OleDbCommand comandoBD = new OleDbCommand(consultaUpdate, conexionBD))
+                    {
+                        comandoBD.Parameters.AddWithValue("password", nuevaContraseña);
+                        comandoBD.Parameters.AddWithValue("usuario", usuario);
+
+                        comandoBD.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Contraseña restablecida con éxito!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al restablecer la contraseña: {ex.Message}");
+                }
+            }
+        }
+
 
     }
 }
