@@ -19,7 +19,7 @@ namespace prySosaIEv
         OleDbCommand comandoBD = new OleDbCommand();
         OleDbDataReader lectorBD;
 
-        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
+        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
 
         public string conexion = "";
 
