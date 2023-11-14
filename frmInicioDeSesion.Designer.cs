@@ -99,7 +99,6 @@
             // btnReestablecer
             // 
             this.btnReestablecer.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnReestablecer.Enabled = false;
             this.btnReestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReestablecer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReestablecer.ForeColor = System.Drawing.Color.White;

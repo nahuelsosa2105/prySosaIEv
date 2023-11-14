@@ -27,6 +27,7 @@ namespace prySosaIEv
 
         public static string usuario;
         public static string contraseña;
+        public static string accion;
         int contador = 0;
         
 
@@ -46,6 +47,7 @@ namespace prySosaIEv
 
             if (clsLogin.respuesta == true)
             {
+                accion = "Inicio Exitoso";
                 objUsuario.RegistroLogInicioSesion();
                 MessageBox.Show("Ingrese al sistema...");
                 
@@ -57,6 +59,8 @@ namespace prySosaIEv
             }
             else
             {
+                accion = "Inicio Fallido";
+                objUsuario.RegistroLogInicioSesion();
                 contador = contador + 1;
                 MessageBox.Show("Usuario o Contraeña incorrectos", "ERROR" , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (contador > 2)
@@ -69,8 +73,9 @@ namespace prySosaIEv
 
         public void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
-//            Data;
-            MessageBox.Show("En proceso de desarrollo, disculpe las molestias");
+            this.Hide();
+            AgregarUsuario pasarform = new AgregarUsuario();
+            pasarform.Show();
         }
 
         private void pctMostrarConstraseña_Click(object sender, EventArgs e)

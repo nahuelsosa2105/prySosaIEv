@@ -18,14 +18,14 @@ namespace prySosaIEv
         OleDbDataAdapter adaptadorBD;
         DataSet objDS;
 
-        string rutaArchivo;
+        public static string rutaArchivo;
         public string estadoConexion;
 
         public clsLogs()
         {
             try
             {
-                rutaArchivo = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BaseDeDatosUsuarios.accdb";
+                rutaArchivo = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
 
                 conexionBD = new OleDbConnection();
                 conexionBD.ConnectionString = rutaArchivo;
@@ -40,45 +40,37 @@ namespace prySosaIEv
                 estadoConexion = error.Message;
             }
         }
+      
 
         public void RegistroLogInicioSesion()
         {
             try
             {
-                conexionBD = new OleDbConnection();
-                conexionBD.ConnectionString = rutaArchivo;
-                conexionBD.Open();
+                using (OleDbConnection conexionBD = new OleDbConnection(rutaArchivo))
+                {
+                    conexionBD.Open();
 
-                comandoBD = new OleDbCommand();
+                    using (OleDbCommand comandoBD = new OleDbCommand())
+                    {
+                        comandoBD.Connection = conexionBD;
+                        comandoBD.CommandType = CommandType.Text;
+                        comandoBD.CommandText = "INSERT INTO logs (usuario, categoria, [fecha/hora], descripcion) VALUES (?, ?, ?, ?)";
 
-                comandoBD.Connection = conexionBD;
-                comandoBD.CommandType = System.Data.CommandType.TableDirect;
-                comandoBD.CommandText = "Logs";
+                        comandoBD.Parameters.AddWithValue("usuario", frmInicioDeSesion.usuario);
+                        comandoBD.Parameters.AddWithValue("categoria", clsLogin.rango);
+                        comandoBD.Parameters.AddWithValue("fecha/hora", DateTime.Now);
+                        comandoBD.Parameters.AddWithValue("descripcion", frmInicioDeSesion.accion);
 
-                adaptadorBD = new OleDbDataAdapter(comandoBD);
-                objDS = new DataSet();
-                adaptadorBD.Fill(objDS, "Logs");
+                        comandoBD.ExecuteNonQuery();
 
-                DataTable objTabla = objDS.Tables["Logs"];
-                DataRow nuevoRegistro = objTabla.NewRow();
-
-                nuevoRegistro["Categoria"] = "admin";
-              // nuevoRegistro["Fecha/Hora"] = "1/1/21";
-                nuevoRegistro["Descripcion"] = "Inicio exitoso";
-
-                objTabla.Rows.Add(nuevoRegistro);
-
-                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
-                adaptadorBD.Update(objDS, "Logs");
-
-                estadoConexion = "Registro exitoso de log";
+                        estadoConexion = "Registro exitoso de log";
+                    }
+                }
             }
             catch (Exception error)
             {
-
                 estadoConexion = error.Message;
             }
-
         }
 
         public void ValidarUsuario(string nombreUser, string passUser)

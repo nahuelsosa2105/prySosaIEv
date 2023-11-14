@@ -19,9 +19,9 @@ namespace prySosaIEv
             this.KeyDown += new KeyEventHandler(AgregarUsuario_KeyDown);
         }
 
-        string usuario;
-        string contraseña;
-        string ConfContraseña;
+        public static string usuario;
+        public static string contraseña;
+        public static string ConfContraseña;
 
         private void AgregarUsuario_KeyDown(object sender, KeyEventArgs e)
         {
@@ -60,6 +60,13 @@ namespace prySosaIEv
         private void txtConfirmarContraseña_TextChanged(object sender, EventArgs e)
         {
             ConfContraseña = txtContraseña.Text;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmInicioDeSesion volver = new frmInicioDeSesion();
+            volver.Show();
         }
     }
 }

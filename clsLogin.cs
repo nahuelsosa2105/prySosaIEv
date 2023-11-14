@@ -19,13 +19,15 @@ namespace prySosaIEv
         OleDbCommand comandoBD = new OleDbCommand();
         OleDbDataReader lectorBD;
 
-        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BaseDeDatosUsuarios.accdb";
+        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
 
         public string conexion = "";
 
         public string datosTabla = "";
 
         public static bool respuesta;
+
+        DataSet objDS = new DataSet();
 
         public void conectarBD()
         {
@@ -34,8 +36,8 @@ namespace prySosaIEv
             conexionBD.Open();
         }
 
-       
 
+        public static string rango;
 
         public void BuscarUsuario()
         {
@@ -57,6 +59,7 @@ namespace prySosaIEv
                 {
                     string usuarioBD = lectorBD[1].ToString();
                     string contraseñaBD = lectorBD[2].ToString();
+                    rango = lectorBD[3].ToString();
 
                     if (usuarioBD == frmInicioDeSesion.usuario & contraseñaBD == frmInicioDeSesion.contraseña)
                     {
@@ -73,7 +76,6 @@ namespace prySosaIEv
             }
         }
 
-        DataSet objDS;
         public void CrearCuenta()
         {
             try
@@ -92,25 +94,61 @@ namespace prySosaIEv
 
                 adaptadorBD.Fill(objDS, "users");
 
-                DataTable objTabla = objDS.Tables["users"];
+                DataTable objtabla = objDS.Tables["users"];
 
-                DataRow nuevoRegistro = objTabla.NewRow();
+                DataRow nuevoRegistro = objtabla.NewRow();
 
-                //nuevoRegistro["Usuario"] = AgregarUsuario.usuario;
-                //nuevoRegistro["contraseña"] = AgregarUsuario.Contraseña;
+                nuevoRegistro["usuario"] = AgregarUsuario.usuario;
+                nuevoRegistro["password"] = AgregarUsuario.contraseña;
+                nuevoRegistro["categoria"] = "user";
 
-                objTabla.Rows.Add(nuevoRegistro);
+                objtabla.Rows.Add(nuevoRegistro);
 
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
 
                 adaptadorBD.Update(objDS, "users");
+
+                MessageBox.Show("¡Cuenta Creada Con Exito!");
+
             }
             catch (Exception ex)
             {
-                conexion = ex.Message;
+                MessageBox.Show(ex.Message);
             }
         }
+     
+        /*
+        public void CrearCuenta()
+        {
+            try
+            {
+                using (OleDbConnection conexionBD = new OleDbConnection(cadenaConexion))
+                {
+                    conexionBD.Open();
 
-        
+                    using (OleDbCommand comandoBD = new OleDbCommand())
+                    {
+                        comandoBD.Connection = conexionBD;
+                        comandoBD.CommandType = CommandType.Text;
+                        comandoBD.CommandText = "INSERT INTO users (usuario, password, categoria) VALUES (?, ?, ?)";
+
+                        comandoBD.Parameters.AddWithValue("usuario", AgregarUsuario.usuario);
+                        comandoBD.Parameters.AddWithValue("password", AgregarUsuario.contraseña);
+                        comandoBD.Parameters.AddWithValue("categoria", "user");
+
+                        comandoBD.ExecuteNonQuery();
+
+                        MessageBox.Show("¡Usuario creado con éxito!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción de alguna manera, por ejemplo, mostrar un mensaje de error.
+                MessageBox.Show("Error al crear usuario: " + ex.Message);
+            }
+        }
+        */
+
     }
 }
