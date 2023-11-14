@@ -16,7 +16,9 @@ namespace prySosaIEv
         public frmMain()
         {
             InitializeComponent();
-            
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmMain_KeyDown);
+
         }
 
 
@@ -112,6 +114,14 @@ namespace prySosaIEv
         private void baseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

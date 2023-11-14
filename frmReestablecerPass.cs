@@ -15,6 +15,8 @@ namespace prySosaIEv
         public frmReestablecerPass()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmReestablecerPass_KeyDown);
         }
 
         public static string usuario;
@@ -47,6 +49,14 @@ namespace prySosaIEv
             this.Close();
             frmInicioDeSesion volver = new frmInicioDeSesion();
             volver.Show();
+        }
+
+        private void frmReestablecerPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

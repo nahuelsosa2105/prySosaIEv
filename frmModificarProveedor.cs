@@ -17,6 +17,8 @@ namespace prySosaIEv
         public frmModificarProveedor()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmModificarProveedor_KeyDown);
         }
         
         public static string rutaArchivo = "../../Resources/Carpetas de Proveedores/Datos Proveedores/ListadoAseguradores.csv";
@@ -104,6 +106,14 @@ namespace prySosaIEv
            
 
         
+        }
+
+        private void frmModificarProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
     

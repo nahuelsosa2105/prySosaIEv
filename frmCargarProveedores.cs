@@ -15,6 +15,8 @@ namespace prySosaIEv
         public frmCargarProveedores()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmCargarProveedores_KeyDown);
         }
         int numGuia = 158;
         clsArchivo grabado = new clsArchivo();
@@ -119,6 +121,14 @@ namespace prySosaIEv
         private void frmCargarProveedores_Load(object sender, EventArgs e)
         {
             lblNumProveedor.Text = numGuia.ToString();
+        }
+
+        private void frmCargarProveedores_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

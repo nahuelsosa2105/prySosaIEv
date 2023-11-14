@@ -35,9 +35,9 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.lblNombreDeUsuario = new System.Windows.Forms.Label();
-            this.pctLogo = new System.Windows.Forms.PictureBox();
             this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pctLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(47, 559);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(431, 38);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -64,7 +64,7 @@
             this.btnCrear.Location = new System.Drawing.Point(46, 480);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(432, 40);
-            this.btnCrear.TabIndex = 18;
+            this.btnCrear.TabIndex = 3;
             this.btnCrear.Text = "Crear Usuario";
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
@@ -77,7 +77,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(263, 26);
-            this.txtContraseña.TabIndex = 16;
+            this.txtContraseña.TabIndex = 1;
             this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // lblContraseña
@@ -96,7 +96,7 @@
             this.txtNombreUsuario.Location = new System.Drawing.Point(215, 290);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(263, 26);
-            this.txtNombreUsuario.TabIndex = 15;
+            this.txtNombreUsuario.TabIndex = 0;
             this.txtNombreUsuario.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
             // lblNombreDeUsuario
@@ -109,18 +109,6 @@
             this.lblNombreDeUsuario.TabIndex = 17;
             this.lblNombreDeUsuario.Text = "Nombre de usuario:";
             // 
-            // pctLogo
-            // 
-            this.pctLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pctLogo.BackgroundImage = global::prySosaIEv.Properties.Resources.foto_Broker_seguros;
-            this.pctLogo.Image = global::prySosaIEv.Properties.Resources.foto_Broker_seguros;
-            this.pctLogo.Location = new System.Drawing.Point(81, 22);
-            this.pctLogo.Name = "pctLogo";
-            this.pctLogo.Size = new System.Drawing.Size(355, 194);
-            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctLogo.TabIndex = 24;
-            this.pctLogo.TabStop = false;
-            // 
             // txtConfirmarContraseña
             // 
             this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,7 +117,7 @@
             this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
             this.txtConfirmarContraseña.PasswordChar = '*';
             this.txtConfirmarContraseña.Size = new System.Drawing.Size(263, 26);
-            this.txtConfirmarContraseña.TabIndex = 25;
+            this.txtConfirmarContraseña.TabIndex = 2;
             this.txtConfirmarContraseña.TextChanged += new System.EventHandler(this.txtConfirmarContraseña_TextChanged);
             // 
             // label1
@@ -141,6 +129,18 @@
             this.label1.Size = new System.Drawing.Size(169, 20);
             this.label1.TabIndex = 26;
             this.label1.Text = "Confirmar Contraseña:";
+            // 
+            // pctLogo
+            // 
+            this.pctLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pctLogo.BackgroundImage = global::prySosaIEv.Properties.Resources.foto_Broker_seguros;
+            this.pctLogo.Image = global::prySosaIEv.Properties.Resources.foto_Broker_seguros;
+            this.pctLogo.Location = new System.Drawing.Point(81, 22);
+            this.pctLogo.Name = "pctLogo";
+            this.pctLogo.Size = new System.Drawing.Size(355, 194);
+            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctLogo.TabIndex = 24;
+            this.pctLogo.TabStop = false;
             // 
             // AgregarUsuario
             // 

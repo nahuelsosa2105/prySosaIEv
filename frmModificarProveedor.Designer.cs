@@ -292,6 +292,7 @@
             this.Name = "frmModificarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmModificarProveedor";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmModificarProveedor_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pctlogoPeq)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -273,6 +273,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCargarProveedores";
             this.Load += new System.EventHandler(this.frmCargarProveedores_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCargarProveedores_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pctlogoPeq)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

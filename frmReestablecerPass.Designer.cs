@@ -50,7 +50,7 @@
             this.btnReestablecer.Location = new System.Drawing.Point(43, 482);
             this.btnReestablecer.Name = "btnReestablecer";
             this.btnReestablecer.Size = new System.Drawing.Size(432, 40);
-            this.btnReestablecer.TabIndex = 7;
+            this.btnReestablecer.TabIndex = 3;
             this.btnReestablecer.Text = "Reestablecer";
             this.btnReestablecer.UseVisualStyleBackColor = false;
             this.btnReestablecer.Click += new System.EventHandler(this.btnReestablecer_Click);
@@ -63,7 +63,7 @@
             this.txtRepContraseña.Name = "txtRepContraseña";
             this.txtRepContraseña.PasswordChar = '*';
             this.txtRepContraseña.Size = new System.Drawing.Size(263, 26);
-            this.txtRepContraseña.TabIndex = 5;
+            this.txtRepContraseña.TabIndex = 2;
             // 
             // lblContraseña
             // 
@@ -80,8 +80,9 @@
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(212, 346);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(263, 26);
-            this.txtContraseña.TabIndex = 4;
+            this.txtContraseña.TabIndex = 1;
             // 
             // lblNombreDeUsuario
             // 
@@ -111,7 +112,7 @@
             this.txtusuario.Location = new System.Drawing.Point(212, 288);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(263, 26);
-            this.txtusuario.TabIndex = 10;
+            this.txtusuario.TabIndex = 0;
             // 
             // label1
             // 
@@ -132,7 +133,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(44, 562);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(431, 38);
-            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -155,6 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReestablecerPass";
             this.Text = "Reestablecer Contraseña";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmReestablecerPass_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

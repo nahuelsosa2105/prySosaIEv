@@ -18,6 +18,8 @@ namespace prySosaIEv
         public frmInicioDeSesion()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmInicioDeSesion_KeyDown);
         }
 
         private void frmInicioDeSesion_FormClosed(object sender, FormClosedEventArgs e)
@@ -118,6 +120,42 @@ namespace prySosaIEv
             {
                 this.Close();
             }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                usuario = txtNombreUsuario.Text;
+                contraseña = txtContraseña.Text;
+
+                clsLogin login = new clsLogin();
+                clsLogs objUsuario = new clsLogs();
+                login.BuscarUsuario();
+                objUsuario.ValidarUsuario(txtNombreUsuario.Text, txtContraseña.Text);
+
+                if (clsLogin.respuesta == true)
+                {
+                    accion = "Inicio Exitoso";
+                    objUsuario.RegistroLogInicioSesion();
+                    MessageBox.Show("Ingrese al sistema...");
+
+
+
+                    this.Hide();
+                    frmMain frmMain = new frmMain();
+                    frmMain.Show();
+                }
+                else
+                {
+                    accion = "Inicio Fallido";
+                    objUsuario.RegistroLogInicioSesion();
+                    contador = contador + 1;
+                    MessageBox.Show("Usuario o Contraeña incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (contador > 2)
+                    {
+                        btnIngresar.Enabled = false;
+                        contador = 0;
+                    }
+                }
+            }
         }
 
         private void btnReestablecer_Click(object sender, EventArgs e)
@@ -125,6 +163,11 @@ namespace prySosaIEv
             this.Hide();
             frmReestablecerPass pasar = new frmReestablecerPass();
             pasar.Show();
+        }
+
+        private void btnIngresar_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
